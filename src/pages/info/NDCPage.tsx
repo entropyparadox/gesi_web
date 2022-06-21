@@ -51,21 +51,19 @@ export const NDCPage = () => {
             <div className="flex items-center space-x-3 py-3 border-b">
               <div className="text-[#059669] font-bold">40%</div>
               <div>
-                2030년 NDC 상향안(2021년 11월 발표)
+                2030 NDC 상향안(2021년 11월 발표)
               </div>
             </div>
             <div className="flex items-center space-x-3 py-3 border-b">
               <div className="text-[#059669] font-bold">45%</div>
               <div>
-                2030년 국가 온실가스 감축목표(Nationally Determined
-                Contribution, NDC)
+                2030 NDC 상향안 분과 검토의견 중위값 
               </div>
             </div>
             <div className="flex items-center space-x-3 py-3 border-b">
               <div className="text-[#059669] font-bold">50%</div>
               <div>
-                2030년 국가 온실가스 감축목표(Nationally Determined
-                Contribution, NDC)
+                2030 NDC 상향안 분과 검토의견 최대값(국민참여분과 의견) 
               </div>
             </div>
           </div>
