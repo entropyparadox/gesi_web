@@ -74,15 +74,15 @@ export const NDCPage = () => {
         <div className="text-xl font-semibold">Reference</div>
         <div className="space-y-2">
           <div className="flex items-center space-x-3">
-            <div className="text-[#059669] font-bold">Reference 1</div>
+            <div className="text-[#059669] font-bold">1</div>
             <div>
-              이 같은 장기목표를 달성하기 위해서는 단기적인 노력이 중요하다.
+              2030 국가 온실가스 감축목표(NDC) 상향안(2021.10.18, 관계부처 합동)  
             </div>
           </div>
           <div className="flex items-center space-x-3">
-            <div className="text-[#059669] font-bold">Reference 2</div>
+            <div className="text-[#059669] font-bold">2</div>
             <div>
-              이 같은 장기목표를 달성하기 위해서는 단기적인 노력이 중요하다.
+              파리협정 NDC 관련 규정(제4조제2,3,9항, 제13조제7항, 제14조제1,2항) 
             </div>
           </div>
         </div>
