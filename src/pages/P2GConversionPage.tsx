@@ -47,7 +47,7 @@ export const P2GConversionPage = () => {
         <div className="grid grid-rows-2 grid-cols-3 gap-2">
           <div className='row-span-2'>
             <PieChart
-              title="부문별 수소수요"
+              title="부문별 수소수요(TWh)"
               labels={ hydrogenDemandLabels }
               simulation={ simulationState.useSelector((state) => state?.P2G_hydrogen_demand) }
               labelMap={ hydrogenDemandLabelMap }
@@ -61,6 +61,7 @@ export const P2GConversionPage = () => {
             labelMap={ summerLabelMap }
             dataMap={ upperChartDataMap }
             dataOptions={ upperChartOptions }
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             title="겨울"
@@ -70,6 +71,7 @@ export const P2GConversionPage = () => {
             labelMap={ winterLabelMap }
             dataMap={ upperChartDataMap }
             dataOptions={ upperChartOptions }
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             labels={ summerLabels }
@@ -80,6 +82,7 @@ export const P2GConversionPage = () => {
             labelMap={ summerLabelMap }
             dataMap={ lowerChartDataMap } 
             dataOptions={ lowerChartOptions }
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             labels={ winterLabels }
@@ -90,6 +93,7 @@ export const P2GConversionPage = () => {
             labelMap={ winterLabelMap }
             dataMap={ lowerChartDataMap } 
             dataOptions={ lowerChartOptions }
+            ylabel="MWh"
           />
         </div>
       </div>
