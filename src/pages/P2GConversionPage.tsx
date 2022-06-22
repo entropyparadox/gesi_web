@@ -11,7 +11,8 @@ const hydrogenDemandLabelMap = {
   'transportation': '수송연료',
   'industrial_material': '산업원료',
 }
-const upperChartPositiveData = ['gas_demand', 'gas_production', 'gas_discharging', 'power_demand_without_p2h']
+const upperChartPositiveData = ['gas_production', 'gas_discharging', 'power_demand_without_p2h']
+const upperChartLineData = ['gas_demand']
 const upperChartDataMap = { 
   'gas_demand': '수소 수요', 
   'gas_production': '수소 생산', 
@@ -57,6 +58,7 @@ export const P2GConversionPage = () => {
             title="여름"
             labels={ summerLabels }
             positiveBarData={ upperChartPositiveData }
+            lineData={ upperChartLineData }
             simulation={ simulationState.useSelector((state) => state?.rep_g) }
             labelMap={ summerLabelMap }
             dataMap={ upperChartDataMap }
@@ -67,6 +69,7 @@ export const P2GConversionPage = () => {
             title="겨울"
             labels={ winterLabels }
             positiveBarData={ upperChartPositiveData }
+            lineData={ upperChartLineData }
             simulation={ simulationState.useSelector((state) => state?.rep_g) }
             labelMap={ winterLabelMap }
             dataMap={ upperChartDataMap }
