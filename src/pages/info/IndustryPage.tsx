@@ -4,8 +4,8 @@ import { LineChart } from '../../components/chartjs/LineChart';
 import { PieChart } from '../../components/chartjs/PieChart';
 import { Table } from '../../components/Table';
 
-const Labels2 = ['발전', '수송', '산업원료'];
-const Prices2 = [5, 2, 8];
+const Labels2 = ['석탄', '석유', 'LNG', '전력', '열', '기타'];
+const Prices2 = [17, 54, 6, 18, 2, 3];
 
 export const IndustryPage = () => {
   return (
@@ -30,11 +30,9 @@ export const IndustryPage = () => {
         </div>
         <div className="grid grid-cols-2 gap-x-10 gap-y-6 w-full pt-5">
           <div>
-            <div className="text-xl font-semibold col-span-2">기본 배경</div>
-            <div className="space-y-8 mt-8">
-              <div className="space-y-3">
-                <div className="font-semibold">WHY</div>
-                <div className="">
+            <div className="space-y-3">
+            <div className="text-xl font-semibold col-span-2">WHY</div>
+            <div className="">
                   "산업부문은 화석연료를 연료 및 원료의 용도로 사용한다. 우선
                   연료로 사용되는 화석연료를 줄이기 위해서 크게 두 가지 방안을
                   고려할 수 있다. 첫째는 에너지 효율 개선을 통해 에너지 사용량을
@@ -46,19 +44,11 @@ export const IndustryPage = () => {
                   과정이 필요하다. 석탄은 철강산업과 시멘트산업에서, 석유는 정유
                   및 석유화학산업에서 원료로 사용하고 있다. 철강산업은 전기로
                   생산 비중을 늘려나가는 방식으로, 정유 및 석유화학산업은 화학적
-                  재활용 및 대체원료 사용을 모색해야 한다. "{' '}
-                </div>
+                  재활용 및 대체원료 사용을 모색해야 한다. "{' '} </div>
               </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="font-semibold">온실가스 배출량</div>
-            <PieChart labels={Labels2} amount={Prices2} />
-          </div>
-
-          <div className="space-y-3 col-span-2">
-            <div className="font-semibold">Check Point!</div>
+            
+            <div className="space-y-3">
+            <div className="text-xl font-semibold col-span-2">CHECK POINT!</div>
             <div className="">
               "산업부문 온실가스 감축을 급격하게 진행할 경우 산업의 국제
               경쟁력에 어려움을 초래할 가능성이 있다. 또한, 전후방 산업들을
@@ -70,8 +60,13 @@ export const IndustryPage = () => {
               수송부문의 연료로 주로 소비되고, 나프타는 석유화학산업의 원료로서
               사용된다. 수송부문의 탈내연기관 및 석유화학산업의 탈탄소화는
               정유산업의 어두운 전망을 보여준다. 수소는 철강 및 석유화학산업에서
-              주요 원료로써 활용될 수 있다."
+              주요 원료로써 활용될 수 있다." </div>
             </div>
+          </div>
+
+          <div>
+            <div className="font-semibold">산업부문의 에너지원별 소비량(TWh)</div>
+            <PieChart labels={Labels2} amount={Prices2} />
           </div>
 
           <div className="col-span-2 flex">
@@ -102,43 +97,51 @@ export const IndustryPage = () => {
                   </Table.Row>
 
                   <Table.Row key={2}>
-                    <Table.Td>전력화(%)</Table.Td>
+                    <Table.Td>전력화율(%)</Table.Td>
                     <Table.Td>2030년</Table.Td>
-                    <Table.Td>56</Table.Td>
-                    <Table.Td></Table.Td>
-                    <Table.Td></Table.Td>
+                    <Table.Td>31.0</Table.Td>
+                    <Table.Td>30.2</Table.Td>
+                    <Table.Td>30.9</Table.Td>
                   </Table.Row>
-
+                  
                   <Table.Row key={3}>
                     <Table.Td></Table.Td>
-                    <Table.Td>2050년</Table.Td>
-                    <Table.Td>79</Table.Td>
-                    <Table.Td>84</Table.Td>
-                    <Table.Td>90</Table.Td>
+                    <Table.Td>2040년</Table.Td>
+                    <Table.Td>46.3</Table.Td>
+                    <Table.Td>45.8</Table.Td>
+                    <Table.Td>49.4</Table.Td>
                   </Table.Row>
 
                   <Table.Row key={4}>
-                    <Table.Td>수소(TWh)</Table.Td>
-                    <Table.Td>2030년</Table.Td>
-                    <Table.Td>10</Table.Td>
-                    <Table.Td>12</Table.Td>
-                    <Table.Td>13</Table.Td>
+                    <Table.Td></Table.Td>
+                    <Table.Td>2050년</Table.Td>
+                    <Table.Td>63.1</Table.Td>
+                    <Table.Td>66.5</Table.Td>
+                    <Table.Td>66.3</Table.Td>
                   </Table.Row>
 
                   <Table.Row key={5}>
-                    <Table.Td></Table.Td>
-                    <Table.Td>2040년</Table.Td>
-                    <Table.Td>21</Table.Td>
-                    <Table.Td>31</Table.Td>
-                    <Table.Td>45</Table.Td>
+                    <Table.Td>수소비중(%)</Table.Td>
+                    <Table.Td>2030년</Table.Td>
+                    <Table.Td>0.9</Table.Td>
+                    <Table.Td>1.0</Table.Td>
+                    <Table.Td>1.2</Table.Td>
                   </Table.Row>
 
                   <Table.Row key={6}>
                     <Table.Td></Table.Td>
+                    <Table.Td>2040년</Table.Td>
+                    <Table.Td>1.9</Table.Td>
+                    <Table.Td>3.2</Table.Td>
+                    <Table.Td>5.1</Table.Td>
+                  </Table.Row>
+
+                  <Table.Row key={7}>
+                    <Table.Td></Table.Td>
                     <Table.Td>2050년</Table.Td>
-                    <Table.Td>38</Table.Td>
-                    <Table.Td>68</Table.Td>
-                    <Table.Td>111</Table.Td>
+                    <Table.Td>4.0</Table.Td>
+                    <Table.Td>8.4</Table.Td>
+                    <Table.Td>15.9</Table.Td>
                   </Table.Row>
                 </Table.Body>
               </Table>
@@ -151,15 +154,15 @@ export const IndustryPage = () => {
         <div className="text-xl font-semibold">Reference</div>
         <div className="space-y-2">
           <div className="flex items-center space-x-3">
-            <div className="text-[#059669] font-bold">Reference 1</div>
+            <div className="text-[#059669] font-bold"> 1</div>
             <div>
-              이 같은 장기목표를 달성하기 위해서는 단기적인 노력이 중요하다.
+              2050년 한국 탈탄소 시나리오: 섹터커플링의 역할(2020, 녹색에너지전략연구소) 
             </div>
           </div>
           <div className="flex items-center space-x-3">
-            <div className="text-[#059669] font-bold">Reference 2</div>
+            <div className="text-[#059669] font-bold"> 2</div>
             <div>
-              이 같은 장기목표를 달성하기 위해서는 단기적인 노력이 중요하다.
+              2019 전 부문 에너지사용 및 온실가스 배출량 통계(2019, 한국에너지공단) 
             </div>
           </div>
         </div>
