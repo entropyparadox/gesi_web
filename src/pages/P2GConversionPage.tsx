@@ -11,7 +11,8 @@ const hydrogenDemandLabelMap = {
   'transportation': '수송연료',
   'industrial_material': '산업원료',
 }
-const upperChartPositiveData = ['gas_demand', 'gas_production', 'gas_discharging', 'power_demand_without_p2h']
+const upperChartPositiveData = ['gas_production', 'gas_discharging', 'power_demand_without_p2h']
+const upperChartLineData = ['gas_demand']
 const upperChartDataMap = { 
   'gas_demand': '수소 수요', 
   'gas_production': '수소 생산', 
@@ -47,7 +48,7 @@ export const P2GConversionPage = () => {
         <div className="grid grid-rows-2 grid-cols-3 gap-2">
           <div className='row-span-2'>
             <PieChart
-              title="부문별 수소수요"
+              title="부문별 수소수요(TWh)"
               labels={ hydrogenDemandLabels }
               simulation={ simulationState.useSelector((state) => state?.P2G_hydrogen_demand) }
               labelMap={ hydrogenDemandLabelMap }
@@ -57,19 +58,23 @@ export const P2GConversionPage = () => {
             title="여름"
             labels={ summerLabels }
             positiveBarData={ upperChartPositiveData }
+            lineData={ upperChartLineData }
             simulation={ simulationState.useSelector((state) => state?.rep_g) }
             labelMap={ summerLabelMap }
             dataMap={ upperChartDataMap }
             dataOptions={ upperChartOptions }
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             title="겨울"
             labels={ winterLabels }
             positiveBarData={ upperChartPositiveData }
+            lineData={ upperChartLineData }
             simulation={ simulationState.useSelector((state) => state?.rep_g) }
             labelMap={ winterLabelMap }
             dataMap={ upperChartDataMap }
             dataOptions={ upperChartOptions }
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             labels={ summerLabels }
@@ -80,6 +85,7 @@ export const P2GConversionPage = () => {
             labelMap={ summerLabelMap }
             dataMap={ lowerChartDataMap } 
             dataOptions={ lowerChartOptions }
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             labels={ winterLabels }
@@ -90,6 +96,7 @@ export const P2GConversionPage = () => {
             labelMap={ winterLabelMap }
             dataMap={ lowerChartDataMap } 
             dataOptions={ lowerChartOptions }
+            ylabel="MWh"
           />
         </div>
       </div>
