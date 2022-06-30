@@ -62,7 +62,7 @@ export const EnergySystemPage = () => {
       <div className="border p-5 bg-white my-5 mx-4">
         <div className="grid grid-cols-2 gap-10">
           <PieChart
-            title="발전설비별 전력생산비중"
+            title="발전설비별 전력생산량(TWh)"
             simulation={simulationState.useSelector(
               (state) => state?.power_generation
             )}
