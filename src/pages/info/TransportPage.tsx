@@ -18,24 +18,23 @@ export const TransportPage = () => {
       </div>
 
       <div className="border p-10 bg-white my-5 mx-4 space-y-2">
-        <div className="text-3xl font-semibold text-green-600">전기차</div>
+        <div className="text-3xl font-semibold text-green-600">전기차 보급 확대</div>
         <div className="grid grid-cols-2 gap-x-10 gap-y-6 w-full pt-5">
           <div>
-            <div className="text-xl font-semibold col-span-2">기본 배경</div>
-            <div className="space-y-8 mt-8">
+            <div>
               <div className="space-y-3">
-                <div className="font-semibold">WHY</div>
-                <div className="">
+              <div className="text-xl font-semibold col-span-2">WHY</div>
+              <div className="">
                   전기차는 기존 내연기관차에 비해 다양한 장점을 갖는다. 우선
                   전기를 사용하여 작동함으로써 운행 중 대기오염물질(CO2, 미세먼지 등)이
                   발생하지 않는다. 또한, 내연기관 및 수소차 대비 에너지 효율이 상대적으로
                   높아 에너지 소비량이 적다는 장점이 있다. 이외에도 신재생에너지 및 신규 
-                  기술과의 연계를 통해 전력망의 안정성 향상 등 사회전반에 미치는 영향이 크다.
-                </div>
+                  기술과의 연계를 통해 전력망의 안정성 향상 등 사회전반에 미치는 영향이 크다. </div>
               </div>
-              <div className="space-y-3 col-span-2">
-                <div className="font-semibold">Check Point!</div>
-                <div className="">
+              
+              <div className="space-y-3">
+              <div className="text-xl font-semibold col-span-2">CHECK POINT</div>
+              <div className="">
                   친환경차는 기술개발 속도, 이용 환경 등이 다각적으로 검토되어 보급 속도가
                   결정되어야 한다. 너무 급진적인 전환은 자동차 산업 및 고용에 부정적 영향을
                   미칠 수 있기 때문이다. 하지만 국제적으로 탈내연기관 선언이 이어지고 있다는
@@ -44,20 +43,18 @@ export const TransportPage = () => {
                   체감됨에 따라 내연기관차에 대한 규제도 점차 강화되고 있다.
                   * EU는 2035년부터 내연기관 신차 판매를 금지할 계획이다. 2020년 11월 우리나라
                   국가기후환경회의는 2035년에 내연기관 판매 중단을 제안한 바 있다. 서울시는
-                  2035년부터 내연기관차 신규 등록 금지르 추진하고 있다.
- 
-                </div>
+                  2035년부터 내연기관차 신규 등록 금지르 추진하고 있다. </div>
               </div>
-              <div className="space-y-3 col-span-2">
-                <div className="font-semibold">참고</div>
-                <div className="">
+
+              <div className="space-y-3">
+              <div className="text-xl font-semibold col-span-2">참고</div>
+              <div className="">
                   1. 전기차 비중: 2020년 0.6%(13만대), 2030년 정부목표
                   12.3%(300만대)
                   <br />
                   2. NDC 상향안: 2030년 전기차 보급목표 362만대
                   <br />
-                  3. 완성차업체의 전기차 생산 전략 및 2030년 공급잠재량 추정치
-                </div>
+                  3. 완성차업체의 전기차 생산 전략 및 2030년 공급잠재량 추정치 </div>
               </div>
             </div>
           </div>
@@ -97,13 +94,13 @@ export const TransportPage = () => {
         <div className="text-xl font-semibold">Reference</div>
         <div className="space-y-2">
           <div className="flex items-center space-x-3">
-            <div className="text-[#059669] font-bold"> 2</div>
+            <div className="text-[#059669] font-bold"> 1</div>
             <div>
               2030 국가 온실가스 감축목표(NDC) 상향안(2021.10.18. 관계부처 합동)
             </div>
           </div>
           <div className="flex items-center space-x-3">
-            <div className="text-[#059669] font-bold"> 3</div>
+            <div className="text-[#059669] font-bold"> 2</div>
             <div>
               제4차 친환경자동차 기본계획(2021~2025)(2021.2. 관계부처 합동) 
             </div>
