@@ -49,12 +49,14 @@ export const OverviewPage = () => {
             labelMap={ energyDemandLabelMap }
             barLabelMap={ energyDemandBarLabelMap }
             dataOptions={ energyDemandChartOptions }
+            ylabel="TWh"
           />
           <BarChart 
             title="온실가스 배출량" 
             simulation={ simulationState.useSelector((state) => state?.emissions) } 
             labelMap={ emissionLabelMap }
             dataOptions={ emissionChartOptions }
+            ylabel="톤CO2eq"
           />
         </div>
       </div>
