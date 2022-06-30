@@ -67,6 +67,7 @@ export const P2XBalancingPage = () => {
             dataMap={ upperLabelMap }
             dataOptions={ upperChartOptions }
             lineData={ upperLineLabels }
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             title="겨울"
@@ -77,6 +78,7 @@ export const P2XBalancingPage = () => {
             dataMap={ upperLabelMap }
             dataOptions={ upperChartOptions }
             lineData={ upperLineLabels }
+            ylabel="MWh"
           />
         </div>
         <div className="grid grid-cols-2 gap-10">
@@ -86,6 +88,7 @@ export const P2XBalancingPage = () => {
             simulation={ simulationState.useSelector((state) => state?.rep) } 
             dataOptions={ lowerChartOption } 
             range={ winterRange }
+            ylabel="MWh"
           />
           <LineChart 
             labels={ lowerLabels }
@@ -93,6 +96,7 @@ export const P2XBalancingPage = () => {
             simulation={ simulationState.useSelector((state) => state?.rep) } 
             dataOptions={ lowerChartOption } 
             range={ summerRange }
+            ylabel="MWh"
           />
         </div>
       </div>
