@@ -85,20 +85,20 @@ export const P2HConversionPage = () => {
               labelMap={ stackedMultiBarChartLabelMap }
               barLabelMap= { stackedMultiBarChartBarLabelMap }
               dataOptions={ stackedMultiBarChartOptions }
-              ylable="TWh"
+              ylabel="TWh"
             />
           </div>
           <BarChart 
             title="화석연료 -> 열 생산" 
             simulation={ simulationState.useSelector((state) => state?.P2H.F2H) }
             dataOptions={ barChartOptions }
-            ylable="MWh"
+            ylabel="MWh"
           />
           <BarChart 
             title="초과전력 -> 열 생산" 
             simulation={ simulationState.useSelector((state) => state?.P2H.P2H) }
             dataOptions={ barChartOptions }
-            ylable="MWh"
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             title="여름"
@@ -109,7 +109,7 @@ export const P2HConversionPage = () => {
             labelMap={ summerLabelMap }
             dataMap={ upperChartDataMap }
             dataOptions={ upperChartOptions }
-            ylable="MWh"
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             labels={ summerLabels }
@@ -120,7 +120,7 @@ export const P2HConversionPage = () => {
             labelMap={ summerLabelMap }
             dataMap={ lowerChartDataMap } 
             dataOptions={ lowerChartOptions }
-            ylable="MWh"
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             title="겨울"
@@ -131,7 +131,7 @@ export const P2HConversionPage = () => {
             labelMap={ winterLabelMap }
             dataMap={ upperChartDataMap }
             dataOptions={ upperChartOptions }
-            ylable="MWh"
+            ylabel="MWh"
           />
           <StackedMultiBarLineChart 
             labels={ winterLabels }
@@ -142,7 +142,7 @@ export const P2HConversionPage = () => {
             labelMap={ winterLabelMap }
             dataMap={ lowerChartDataMap } 
             dataOptions={ lowerChartOptions }
-            ylable="MWh"
+            ylabel="MWh"
           />
         </div>
       </div>
