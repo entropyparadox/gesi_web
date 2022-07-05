@@ -6,7 +6,7 @@ import { SelectButton } from './SelectButton';
 import { activationState, scenarioState } from '../plugins/ridge';
 
 export const FillterBar = () => {
-  const [scenario, setScenario] = scenarioState.use(); 
+  const [scenario, setScenario] = scenarioState.use();
 
   const [target, setTarget] = useState<boolean>(scenario.target);
   const [ndc, setNdc] = useState<number>(scenario.ndc);
@@ -19,9 +19,8 @@ export const FillterBar = () => {
   const [activated, setActivated] = activationState.use();
 
   function runSimulation() {
-    if (activated === false)
-      return;
-      
+    if (activated === false) return;
+
     setScenario({
       target: target,
       ndc: ndc,
@@ -29,28 +28,40 @@ export const FillterBar = () => {
       building: building,
       industry: industry,
       powerPv: powerPv,
-      powerWt: powerWt
+      powerWt: powerWt,
     });
   }
 
   React.useEffect(() => {
-    if (activated)
-      runSimulation();
-    else
-      return
+    if (activated) runSimulation();
+    else return;
   }, [activated]);
 
-  React.useEffect(() => { runSimulation() }, [target]);
-  React.useEffect(() => { runSimulation() }, [ndc]);
-  React.useEffect(() => { runSimulation() }, [transport]);
-  React.useEffect(() => { runSimulation() }, [building]);
-  React.useEffect(() => { runSimulation() }, [industry]);
-  React.useEffect(() => { runSimulation() }, [powerPv]);
-  React.useEffect(() => { runSimulation() }, [powerWt]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [target]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [ndc]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [transport]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [building]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [industry]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [powerPv]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [powerWt]);
 
   return (
     <div className="border p-5 bg-white my-5 mx-4">
-      <div className="grid xl:grid-cols-3 grid-cols-2 gap-x-10 gap-y-5">
+      <div className="scenario grid grid-cols-3 gap-x-10 gap-y-5">
         <div className="flex">
           <LabelButton to="" label="Target" />
 
@@ -103,9 +114,13 @@ export const FillterBar = () => {
             />
           </div>
         </div>
+      </div>
 
-        <div className="col-start-1 col-span-3 border-t border-gray-100" />
+      <div className="grid xl:grid-cols-3 grid-cols-2 gap-x-10 gap-y-5">
+        <div className="col-start-1 col-span-3 border-t border-gray-100 my-5" />
+      </div>
 
+      <div className="options grid xl:grid-cols-3 grid-cols-2 gap-x-10 gap-y-5">
         <div className="flex">
           <LabelButton to="/info/transport" label="Transport" />
           <div className="mx-3 space-y-1 my-1">
@@ -254,9 +269,9 @@ export const FillterBar = () => {
               />
             </div>
           </div>
-          <Button 
-            text="시나리오 생성	+" 
-            className="filled-deep-blue px-8" 
+          <Button
+            text="시나리오 생성	+"
+            className="filled-deep-blue px-8 create"
             onClick={() => {
               setActivated(true);
             }}

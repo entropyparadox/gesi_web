@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import { AuthRoute } from '../components/AuthRoute';
 import { LoginPage } from './LoginPage';
@@ -19,10 +19,38 @@ import { PowerPage } from './info/PowerPage';
 import { IndustryPage } from './info/IndustryPage';
 import { BuildingPage } from './info/BuildingPage';
 import { TransportPage } from './info/TransportPage';
+import 'intro.js/introjs.css';
+import { Steps, Hints } from 'intro.js-react';
+
+const steps = [
+  {
+    element: '.menu',
+    intro: '항목별 주요 결과 표시',
+  },
+  {
+    element: '.scenario',
+    intro: '시나리오 목표년도 및 단기 감축 목표 결정',
+  },
+  {
+    element: '.options',
+    intro: '부문별 주요 감축수단의 감축 강도 결정',
+  },
+  {
+    element: '.create',
+    intro: '결정된 시나리오 결과 생성',
+  },
+];
 
 export const Router = () => {
+  const [stepsEnabled, setStepsEnabled] = useState(true);
   return (
     <div className="min-h-screen flex flex-col flex-1">
+      <Steps
+        enabled={stepsEnabled}
+        steps={steps}
+        initialStep={0}
+        onExit={(e) => console.log(e)}
+      />
       <main className="relative flex-1 flex flex-col bg-gray-50">
         <TopNavBar />
         <div className="max-w-screen-2xl mx-auto flex-1 w-full">
