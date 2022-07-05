@@ -70,10 +70,10 @@ export const Router = () => {
             <AuthRoute path="/signup" component={SignupPage} guestOnly />
             <AuthRoute path="/login" component={LoginPage} guestOnly />
             <AuthRoute path="/mypage" component={MyPage} />
-            {/* <Route path="/" component={HomePage} exact /> */}
-            <Route path="/">
+            <Route path="/" component={OverviewPage} exact />
+            {/* <Route path="/">
               <Redirect to="/overview" />
-            </Route>
+            </Route> */}
           </Switch>
         </div>
         <BottomBar />
