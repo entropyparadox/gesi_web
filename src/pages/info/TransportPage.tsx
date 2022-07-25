@@ -21,7 +21,7 @@ export const TransportPage = () => {
         <div className="text-3xl font-semibold text-green-600">전기차 보급 확대</div>
         <div className="grid grid-cols-2 gap-x-10 gap-y-6 w-full pt-5">
           <div>
-            <div>
+            <div className="space-y-8 mt-8">
               <div className="space-y-3">
               <div className="text-xl font-semibold col-span-2">WHY</div>
               <div className="">
@@ -31,6 +31,7 @@ export const TransportPage = () => {
                   높아 에너지 소비량이 적다는 장점이 있다. 이외에도 신재생에너지 및 신규 
                   기술과의 연계를 통해 전력망의 안정성 향상 등 사회전반에 미치는 영향이 크다. </div>
               </div>
+            </div>
               
               <div className="space-y-3">
               <div className="text-xl font-semibold col-span-2">CHECK POINT</div>
@@ -40,10 +41,10 @@ export const TransportPage = () => {
                   미칠 수 있기 때문이다. 하지만 국제적으로 탈내연기관 선언이 이어지고 있다는
                   점은 급진적 전환이 필요한 상황임을 보여주고 있으며, 변화를 주도하지 못한다면
                   자칫 국제 시장에서 도태될 위험성도 존재한다. 또한, 기후변화의 심각성이 점차 
-                  체감됨에 따라 내연기관차에 대한 규제도 점차 강화되고 있다.
+                  체감됨에 따라 내연기관차에 대한 규제도 점차 강화되고 있다.<br />
                   * EU는 2035년부터 내연기관 신차 판매를 금지할 계획이다. 2020년 11월 우리나라
                   국가기후환경회의는 2035년에 내연기관 판매 중단을 제안한 바 있다. 서울시는
-                  2035년부터 내연기관차 신규 등록 금지르 추진하고 있다. </div>
+                  2035년부터 내연기관차 신규 등록 금지를 추진하고 있다. </div>
               </div>
 
               <div className="space-y-3">
@@ -65,25 +66,25 @@ export const TransportPage = () => {
             <div className="flex items-center space-x-3 py-3 border-b">
               <div className="text-[#059669] font-bold">10%</div>
               <div>
-                누적보급대수 243만대, 느린 기술 개발 및 인프라 확충 미비로
+                누적보급대수 193만대, 느린 기술 개발 및 인프라 확충 미비로
                 정부목표에 미달
               </div>
             </div>
             <div className="flex items-center space-x-3 py-3 border-b">
               <div className="text-[#059669] font-bold">15%</div>
               <div>
-                누적보급대수 487만대, 친환경차 시장의 활성화 및 이른 시점의
+                누적보급대수 276만대, 친환경차 시장의 활성화 및 이른 시점의
                 전기차 경제성 강화
               </div>
             </div>
             <div className="flex items-center space-x-3 py-3 border-b">
               <div className="text-[#059669] font-bold">20%</div>
-              <div>누적보급대수 365만대, NDC 상향안(2021) 목표 달성</div>
+              <div>누적보급대수 359만대, NDC 상향안(2021) 목표 달성</div>
             </div>
             <div className="flex items-center space-x-3 py-3 border-b">
               <div className="text-[#059669] font-bold">25%</div>
               <div>
-                누적보급대수 609만대, 완성차업체의 전기차 생산 및 공급목표 달성
+                누적보급대수 442만대, 완성차업체의 전기차 생산 및 공급목표에 근접
               </div>
             </div>
           </div>
