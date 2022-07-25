@@ -21,7 +21,7 @@ export const TopNavBar = () => {
   return (
     <div className="w-screen border-b-2 sticky top-0 bg-white">
       <div className="max-w-screen-2xl mx-auto px-4 py-4 w-full text-xl font-semibold cursor-pointer" onClick={()=>push('/')}>
-        Green analytics
+        GESI Energy Scenario Analytics
       </div>
       {!pathname.startsWith('/info') && (
         <div className="border-t-2 ">
