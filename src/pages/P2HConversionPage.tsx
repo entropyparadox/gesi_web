@@ -372,7 +372,7 @@ const labelMap = {
   fuel: 'fossil',
   heat: 'heat',
   elec: 'electricity',
-}
+};
 
 export const P2HConversionPage = () => {
   let home_target = 'home_2030';
@@ -420,8 +420,8 @@ export const P2HConversionPage = () => {
             ylabel="P2H (MWh)"
             labelMap={labelMap}
           />
-          </div>
-          <div className="grid grid-rows-2 grid-flow-col grid-cols-2 gap-2">
+        </div>
+        <div className="grid grid-rows-2 grid-flow-col grid-cols-2 gap-2">
           <StackedMultiBarLineChart
             title="여름"
             labels={summerLabels}

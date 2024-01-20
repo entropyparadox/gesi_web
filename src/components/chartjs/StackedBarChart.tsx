@@ -89,6 +89,7 @@ export const StackedBarChart: React.FC<StackedBarChartProps> = ({
   });
 
   const options = {
+    maintainAspectRatio: false,
     responsive: true,
     plugins: {
       tooltip: {
@@ -188,7 +189,7 @@ export const StackedBarChart: React.FC<StackedBarChartProps> = ({
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Bar data={data} options={options} />
     </div>
   );
