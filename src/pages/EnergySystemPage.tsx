@@ -60,26 +60,30 @@ export const EnergySystemPage = () => {
   return (
     <div>
       <div className="border p-5 bg-white my-5 mx-4">
-        <div className="grid grid-cols-2 gap-10">
-          <PieChart
-            title="발전설비별 전력생산량(TWh)"
-            simulation={simulationState.useSelector(
-              (state) => state?.power_generation
-            )}
-            labels={powerGenerationLabels}
-            labelMap={powerGenerationLabelMap}
-            className="w-1/2"
-          />
-          <BarChart
-            title="발전설비구성"
-            simulation={simulationState.useSelector(
-              (state) => state?.facility_configuration
-            )}
-            dataOptions={facilityConfigurationChartOptions}
-            labels={facilityConfigurationLabels}
-            labelMap={facilityConfigurationLabelMap}
-            ylabel="MW"
-          />
+        <div className="grid grid-cols-5 gap-10">
+          <div className="col-span-2">
+            <PieChart
+              title="발전설비별 전력생산량(TWh)"
+              simulation={simulationState.useSelector(
+                (state) => state?.power_generation
+              )}
+              labels={powerGenerationLabels}
+              labelMap={powerGenerationLabelMap}
+              className="w-4/5"
+            />
+          </div>
+          <div className="col-span-3">
+            <BarChart
+              title="발전설비구성"
+              simulation={simulationState.useSelector(
+                (state) => state?.facility_configuration
+              )}
+              dataOptions={facilityConfigurationChartOptions}
+              labels={facilityConfigurationLabels}
+              labelMap={facilityConfigurationLabelMap}
+              ylabel="MW"
+            />
+          </div>
         </div>
       </div>
       <FillterBar />
