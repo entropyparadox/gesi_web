@@ -44,14 +44,24 @@ const lowerChartOption = {
 }
 
 const summerRange = {
-  start: 1,
-  end: 71
+  start: 5377,
+  end: 5448
 }
 
 const winterRange = {
-  start: 5378,
-  end: 5450
+  start: 1,
+  end: 72
 }
+
+// const summerRange = {
+//   start: 1,
+//   end: 71
+// }
+
+// const winterRange = {
+//   start: 5378,
+//   end: 5450
+// }
 
 export const P2XBalancingPage = () => {
   return (
