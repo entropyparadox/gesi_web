@@ -140,7 +140,7 @@ export const StackedMultiBarChart: React.FC<StackedMultiBarChartProps> = ({
         },
       },
     },
-    maintainAspectRatio: undefined,
+    maintainAspectRatio: false,
   };
 
   if (simulation) {
