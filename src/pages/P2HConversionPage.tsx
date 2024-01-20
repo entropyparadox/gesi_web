@@ -368,6 +368,12 @@ const summerLabelMap = {
   '5448': '71',
 };
 
+const labelMap = {
+  fuel: 'fossil',
+  heat: 'heat',
+  elec: 'electricity',
+}
+
 export const P2HConversionPage = () => {
   let home_target = 'home_2030';
   let commerce_target = 'commerce_2030';
@@ -385,7 +391,7 @@ export const P2HConversionPage = () => {
   return (
     <div>
       <div className="border p-5 bg-white my-5 mx-4">
-        <div className="grid grid-rows-2 grid-flow-col grid-cols-4 gap-2">
+        <div className="grid grid-rows-2 grid-flow-col grid-cols-2 gap-2">
           <div className="row-span-2">
             <StackedMultiBarChart
               title="건물 부분 에너지 소비"
@@ -401,17 +407,21 @@ export const P2HConversionPage = () => {
             />
           </div>
           <BarChart
-            title="화석연료 -> 열 생산"
+            title="열 생산 방식"
             simulation={simulationState.useSelector((state) => state?.P2H.F2H)}
             dataOptions={barChartOptions}
-            ylabel="MWh"
+            ylabel="F2H (MWh)"
+            labelMap={labelMap}
           />
           <BarChart
-            title="초과전력 -> 열 생산"
+            title=""
             simulation={simulationState.useSelector((state) => state?.P2H.P2H)}
             dataOptions={barChartOptions}
-            ylabel="MWh"
+            ylabel="P2H (MWh)"
+            labelMap={labelMap}
           />
+          </div>
+          <div className="grid grid-rows-2 grid-flow-col grid-cols-2 gap-2">
           <StackedMultiBarLineChart
             title="여름"
             labels={summerLabels}

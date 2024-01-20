@@ -86,6 +86,9 @@ export const BarChart: React.FC<BarChartProps> = ({
     },
     scales: {
       y: {
+        afterFit: function(scaleInstance: any) {
+          scaleInstance.width = 90; // y축 라벨을 위한 충분한 여백 제공
+        },
         max: undefined,
         title: {
           display: true,
