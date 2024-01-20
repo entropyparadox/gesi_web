@@ -166,7 +166,7 @@ export const BarChart: React.FC<BarChartProps> = ({
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Chart type="bar" data={data} options={options} />
     </div>
   );
