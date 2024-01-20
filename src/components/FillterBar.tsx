@@ -3,10 +3,10 @@ import { Button } from './Button';
 import { LabelButton } from './LabelButton';
 import { SelectButton } from './SelectButton';
 
-import { scenarioState } from '../plugins/ridge';
+import { activationState, scenarioState } from '../plugins/ridge';
 
 export const FillterBar = () => {
-  const [scenario, setScenario] = scenarioState.use(); 
+  const [scenario, setScenario] = scenarioState.use();
 
   const [target, setTarget] = useState<boolean>(scenario.target);
   const [ndc, setNdc] = useState<number>(scenario.ndc);
@@ -16,9 +16,52 @@ export const FillterBar = () => {
   const [powerPv, setPowerPv] = useState<number>(scenario.powerPv);
   const [powerWt, setPowerWt] = useState<number>(scenario.powerWt);
 
+  const [activated, setActivated] = activationState.use();
+
+  function runSimulation() {
+    if (activated === false) return;
+
+    setScenario({
+      target: target,
+      ndc: ndc,
+      transport: transport,
+      building: building,
+      industry: industry,
+      powerPv: powerPv,
+      powerWt: powerWt,
+    });
+  }
+
+  React.useEffect(() => {
+    if (activated) runSimulation();
+    else return;
+  }, [activated]);
+
+  React.useEffect(() => {
+    runSimulation();
+  }, [target]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [ndc]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [transport]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [building]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [industry]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [powerPv]);
+  React.useEffect(() => {
+    runSimulation();
+  }, [powerWt]);
+
   return (
     <div className="border p-5 bg-white my-5 mx-4">
-      <div className="grid xl:grid-cols-3 grid-cols-2 gap-x-10 gap-y-5">
+      <div className="scenario grid grid-cols-3 gap-x-10 gap-y-5">
         <div className="flex">
           <LabelButton to="" label="Target" />
 
@@ -48,28 +91,36 @@ export const FillterBar = () => {
             <SelectButton
               text="35"
               selected={ndc === 0}
+              disabled={target}
               onClick={() => setNdc(0)}
             />
             <SelectButton
               text="40"
               selected={ndc === 1}
+              disabled={target}
               onClick={() => setNdc(1)}
             />
             <SelectButton
               text="45"
               selected={ndc === 2}
+              disabled={target}
               onClick={() => setNdc(2)}
             />
             <SelectButton
               text="50"
               selected={ndc === 3}
+              disabled={target}
               onClick={() => setNdc(3)}
             />
           </div>
         </div>
+      </div>
 
-        <div className="col-start-1 col-span-3 border-t border-gray-100" />
+      <div className="grid xl:grid-cols-3 grid-cols-2 gap-x-10 gap-y-5">
+        <div className="col-start-1 col-span-3 border-t border-gray-100 my-5" />
+      </div>
 
+      <div className="options grid xl:grid-cols-3 grid-cols-2 gap-x-10 gap-y-5">
         <div className="flex">
           <LabelButton to="/info/transport" label="Transport" />
           <div className="mx-3 space-y-1 my-1">
@@ -78,21 +129,25 @@ export const FillterBar = () => {
               <SelectButton
                 text="10"
                 selected={transport === 0}
+                disabled={target}
                 onClick={() => setTransport(0)}
               />
               <SelectButton
                 text="15"
                 selected={transport === 1}
+                disabled={target}
                 onClick={() => setTransport(1)}
               />
               <SelectButton
                 text="20"
                 selected={transport === 2}
+                disabled={target}
                 onClick={() => setTransport(2)}
               />
               <SelectButton
                 text="25"
                 selected={transport === 3}
+                disabled={target}
                 onClick={() => setTransport(3)}
               />
             </div>
@@ -214,19 +269,11 @@ export const FillterBar = () => {
               />
             </div>
           </div>
-          <Button 
-            text="시나리오 생성	+" 
-            className="filled-deep-blue px-8" 
+          <Button
+            text="시나리오 생성	+"
+            className="filled-deep-blue px-8 create"
             onClick={() => {
-              setScenario({
-                target: target,
-                ndc: ndc,
-                transport: transport,
-                building: building,
-                industry: industry,
-                powerPv: powerPv,
-                powerWt: powerWt
-              });
+              setActivated(true);
             }}
           />
         </div>

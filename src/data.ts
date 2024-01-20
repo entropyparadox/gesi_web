@@ -18,7 +18,7 @@ export async function getData(target: boolean, ndc: number, transport: number, b
   } else {
       file = `${year}_${_ndc}_${pv}_${wt}_${buildingRetrofitRate}_${bevShares}_${industryDecarbonizationLevel}.json`
   }
-  const url = `/data/${file}`
+  const url = `http://gesi.dev.martian.link/data/${file}`
 
   return fetch(url, {
     headers: {
