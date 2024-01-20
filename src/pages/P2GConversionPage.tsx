@@ -4,6 +4,8 @@ import { StackedMultiBarLineChart } from '../components/chartjs/StackedMultiBarL
 import { PieChart } from '../components/chartjs/PieChart';
 import { FillterBar } from '../components/FillterBar';
 import { simulationState } from '../plugins/ridge';
+import { StackedMultiBarChart } from '../components/chartjs/StackedMultiBarChart';
+import { BarChart } from '../components/chartjs/BarChart';
 
 const hydrogenDemandLabels = [
   'electricity_generation',
@@ -358,65 +360,111 @@ export const summerLabelMap = {
   '5448': '71',
 };
 
+let stackedMultiBarChartBarLabels = ['home_2020'];
+const stackedMultiBarChartBarLabelMap = {
+  home_2020: "가정 '20",
+};
+const stackedMultiBarChartLabels = [
+  'district_heating',
+  'city_gas',
+  'oil',
+  'coal',
+  'electric_heating',
+  'others',
+];
+const stackedMultiBarChartLabelMap = {
+  district_heating: '지역난방',
+  city_gas: '도시가스',
+  oil: '석유',
+  coal: '석탄',
+  electric_heating: '전력',
+  others: '기타',
+};
+const stackedMultiBarChartOptions = {
+  maintainAspectRatio: false,
+  // barThickness: 20,
+};
+
+const barChartOptions = {
+  indexAxis: 'y',
+  maintainAspectRatio: false,
+  barThickness: 20,
+};
+
 export const P2GConversionPage = () => {
   return (
     <div>
       <div className="border p-5 bg-white my-5 mx-4">
-        <div className="grid grid-rows-2 grid-cols-3 gap-2">
-          <div className="row-span-2">
-            <PieChart
-              title="부문별 수소수요(TWh)"
-              labels={hydrogenDemandLabels}
+        <div className="grid grid-cols-5 gap-2">
+          <div className="col-span-1 h-full">
+            <BarChart
+              title="부문별 수소수요"
               simulation={simulationState.useSelector(
                 (state) => state?.P2G_hydrogen_demand
               )}
+              // dataOptions={facilityConfigurationChartOptions}
+              labels={hydrogenDemandLabels}
               labelMap={hydrogenDemandLabelMap}
+              ylabel="TWh"
+              dataOptions={barChartOptions}
             />
           </div>
-          <StackedMultiBarLineChart
-            title="여름"
-            labels={summerLabels}
-            positiveBarData={upperChartPositiveData}
-            lineData={upperChartLineData}
-            simulation={simulationState.useSelector((state) => state?.rep_g)}
-            labelMap={summerLabelMap}
-            dataMap={upperChartDataMap}
-            dataOptions={upperChartOptions}
-            ylabel="MWh"
-          />
-          <StackedMultiBarLineChart
-            title="겨울"
-            labels={winterLabels}
-            positiveBarData={upperChartPositiveData}
-            lineData={upperChartLineData}
-            simulation={simulationState.useSelector((state) => state?.rep_g)}
-            labelMap={winterLabelMap}
-            dataMap={upperChartDataMap}
-            dataOptions={upperChartOptions}
-            ylabel="MWh"
-          />
-          <StackedMultiBarLineChart
-            labels={summerLabels}
-            positiveBarData={lowerChartPositiveData}
-            negativeBarData={lowerChartNegativeData}
-            lineData={lowerChartLineData}
-            simulation={simulationState.useSelector((state) => state?.rep_g)}
-            labelMap={summerLabelMap}
-            dataMap={lowerChartDataMap}
-            dataOptions={lowerChartOptions}
-            ylabel="MWh"
-          />
-          <StackedMultiBarLineChart
-            labels={winterLabels}
-            positiveBarData={lowerChartPositiveData}
-            negativeBarData={lowerChartNegativeData}
-            lineData={lowerChartLineData}
-            simulation={simulationState.useSelector((state) => state?.rep_g)}
-            labelMap={winterLabelMap}
-            dataMap={lowerChartDataMap}
-            dataOptions={lowerChartOptions}
-            ylabel="MWh"
-          />
+          <div className="col-span-4">
+            <div className="grid grid-cols-2 gap-2">
+              <StackedMultiBarLineChart
+                title="여름"
+                labels={summerLabels}
+                positiveBarData={upperChartPositiveData}
+                lineData={upperChartLineData}
+                simulation={simulationState.useSelector(
+                  (state) => state?.rep_g
+                )}
+                labelMap={summerLabelMap}
+                dataMap={upperChartDataMap}
+                dataOptions={upperChartOptions}
+                ylabel="MWh"
+              />
+              <StackedMultiBarLineChart
+                title="겨울"
+                labels={winterLabels}
+                positiveBarData={upperChartPositiveData}
+                lineData={upperChartLineData}
+                simulation={simulationState.useSelector(
+                  (state) => state?.rep_g
+                )}
+                labelMap={winterLabelMap}
+                dataMap={upperChartDataMap}
+                dataOptions={upperChartOptions}
+                ylabel="MWh"
+              />
+              <StackedMultiBarLineChart
+                labels={summerLabels}
+                positiveBarData={lowerChartPositiveData}
+                negativeBarData={lowerChartNegativeData}
+                lineData={lowerChartLineData}
+                simulation={simulationState.useSelector(
+                  (state) => state?.rep_g
+                )}
+                labelMap={summerLabelMap}
+                dataMap={lowerChartDataMap}
+                dataOptions={lowerChartOptions}
+                ylabel="MWh"
+              />
+              <StackedMultiBarLineChart
+                labels={winterLabels}
+                positiveBarData={lowerChartPositiveData}
+                negativeBarData={lowerChartNegativeData}
+                lineData={lowerChartLineData}
+                simulation={simulationState.useSelector(
+                  (state) => state?.rep_g
+                )}
+                labelMap={winterLabelMap}
+                dataMap={lowerChartDataMap}
+                dataOptions={lowerChartOptions}
+                ylabel="MWh"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <FillterBar />
