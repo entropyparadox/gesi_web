@@ -112,6 +112,9 @@ export const StackedMultiBarLineChart: React.FC<
         },
       },
       y: {
+        afterFit: function(scaleInstance: any) {
+          scaleInstance.width = 80; // y축 라벨을 위한 충분한 여백 제공
+        },
         stacked: true,
         max: undefined,
         grid: {
