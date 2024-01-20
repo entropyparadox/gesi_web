@@ -131,6 +131,7 @@ export const StackedMultiBarChart: React.FC<StackedMultiBarChartProps> = ({
         stacked: true,
       },
       y: {
+        
         stacked: true,
         max: undefined,
         title: {
